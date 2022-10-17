@@ -1,0 +1,26 @@
+{
+    "name": "painlesscode/dash-card",
+    "type": "library",
+    "description": "Dashboard cards",
+    "autoload": {
+        "psr-4": {
+            "Painlesscode\\Dashcard\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hazzaz Bin Faiz",
+            "email": "hazzazbinfaiz@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Painlesscode\\Dashcard\\DashcardServiceProvider"
+            ]
+        }
+    }
+}
