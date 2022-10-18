@@ -18,11 +18,18 @@ class Value extends Card
         return new self($label, $value);
     }
 
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    public function getValue()
+    {
+        return value($this->value);
+    }
+
     public function render()
     {
-        return view('dash-card::value', [
-            'label' => $this->label,
-            'value' => $this->value,
-        ]);
+        return view('dash-card::value', ['card' => $this]);
     }
 }
