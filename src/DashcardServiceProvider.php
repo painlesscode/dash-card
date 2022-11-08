@@ -10,7 +10,7 @@ class DashcardServiceProvider extends ServiceProvider
 {
     public function register()
     {
-
+        $this->app->singleton(CardManager::class);
     }
 
     public function boot()
