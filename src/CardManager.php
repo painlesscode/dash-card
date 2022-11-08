@@ -2,6 +2,7 @@
 
 namespace Painlesscode\Dashcard;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\HtmlString;
 use Painlesscode\Dashcard\Card\Card;
 
@@ -9,9 +10,14 @@ class CardManager
 {
     protected $cards = [];
 
-    public function register(Card $card)
+    /**
+     * @param Card|Card[] $card
+     * @return void
+     */
+    public function register($card)
     {
-        $this->cards[] = $card;
+        $card = is_array($card) ? $card : Arr::wrap($card);
+        $this->cards = array_merge($this->cards, $card);
     }
 
     public function render()

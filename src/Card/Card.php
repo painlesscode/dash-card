@@ -17,7 +17,6 @@ class Card
         'bg-teal-500',
     ];
 
-
     protected $actions = [];
 
     public function isVisible()
