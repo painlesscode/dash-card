@@ -1,4 +1,4 @@
-@php($id = rand())
+@php($id = \Illuminate\Support\Str::snake($card->getLabel()).'_'.rand())
 <div class="w-full bg-white rounded shadow p-3 {{ $card->getColor() }}">
     <div class="w-full flex justify-between">
         <div class="text-xl">{{ $card->getLabel() }}</div>
