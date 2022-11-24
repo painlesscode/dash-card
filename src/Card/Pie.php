@@ -31,7 +31,7 @@ class Pie extends Card
 
     public function type($type)
     {
-        throw_if(in_array($type, ['pie','doughnut']), 'Unsupported chart type');
+        throw_unless(in_array($type, ['pie','doughnut']), 'Unsupported chart type');
         $this->type = $type;
         return $this;
     }
