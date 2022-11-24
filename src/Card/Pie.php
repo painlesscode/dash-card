@@ -4,15 +4,16 @@ namespace Painlesscode\Dashcard\Card;
 
 class Pie extends Card
 {
-    protected $label;
+    protected string $label;
     protected $value;
-    protected $type;
+    protected string $type;
     protected $data;
 
     public function __construct($label, $value)
     {
         $this->label = $label;
         $this->value = $value;
+        $this->type = 'pie';
     }
 
     public static function make($label, $value)
