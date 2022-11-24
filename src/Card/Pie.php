@@ -8,11 +8,10 @@ class Pie extends Card
     protected $value;
     public $type;
 
-    public function __construct($label, $value, $type = 'pie')
+    public function __construct($label, $value)
     {
         $this->label = $label;
         $this->value = $value;
-        $this->type = $type;
     }
 
     public static function make($label, $value)
@@ -28,6 +27,13 @@ class Pie extends Card
     public function getValue()
     {
         return value($this->value);
+    }
+
+    public function type($type)
+    {
+        throw_if(in_array($type, ['pie','doughnut']), 'Unsupported chart type');
+        $this->type = $type;
+        return $this;
     }
 
     public function render()
