@@ -2,6 +2,8 @@
 
 namespace Painlesscode\Dashcard\Card;
 
+use Painlesscode\Dashcard\Action;
+
 class Card
 {
     protected $visible = true;
@@ -38,9 +40,9 @@ class Card
         return $this;
     }
 
-    public function action($label, $url)
+    public function action(Action $action)
     {
-        $this->actions[$label] = $url;
+        $this->actions[] = $action;
         return $this;
     }
 
