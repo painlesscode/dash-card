@@ -3,6 +3,7 @@
 namespace Painlesscode\Dashcard\Card;
 
 use Painlesscode\Dashcard\Action;
+use Painlesscode\Dashcard\CardManager;
 
 class Card
 {
@@ -20,6 +21,13 @@ class Card
     ];
 
     protected $actions = [];
+
+    protected $theme;
+
+    public function __construct()
+    {
+        $this->theme = CardManager::$defaultTheme;
+    }
 
     public function isVisible()
     {
@@ -58,6 +66,11 @@ class Card
 
     public function when($condition, $callable) {
         if (value($condition)) call_user_func($callable, $this);
+        return $this;
+    }
+
+    public function setTheme(string $theme) {
+        $this->theme = $theme;
         return $this;
     }
 }

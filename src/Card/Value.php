@@ -11,6 +11,7 @@ class Value extends Card
     {
         $this->label = $label;
         $this->value = $value;
+        parent::__construct();
     }
 
     public static function make($label, $value)
@@ -30,6 +31,6 @@ class Value extends Card
 
     public function render()
     {
-        return view('dash-card::value', ['card' => $this]);
+        return view('dash-card::'.$this->theme.'.value', ['card' => $this]);
     }
 }

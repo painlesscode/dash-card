@@ -14,6 +14,7 @@ class Pie extends Card
         $this->label = $label;
         $this->value = $value;
         $this->type = 'pie';
+        parent::__construct();
     }
 
     public static function make($label, $value)
@@ -63,6 +64,6 @@ class Pie extends Card
 
     public function render()
     {
-        return view('dash-card::pie', ['card' => $this]);
+        return view('dash-card::'.$this->theme.'.pie', ['card' => $this]);
     }
 }

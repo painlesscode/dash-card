@@ -8,6 +8,8 @@ use Painlesscode\Dashcard\Card\Card;
 
 class CardManager
 {
+    public static $defaultTheme = 'default';
+
     protected $cards = [];
 
     /**
